@@ -18,6 +18,10 @@ class User < ApplicationRecord
     EmailWorker.perform_async(:welcome_user, email, :deliver_later)
   end
 
+  def authenticate?(password)
+    authenticate(password)
+  end
+
   private
 
   def set_username

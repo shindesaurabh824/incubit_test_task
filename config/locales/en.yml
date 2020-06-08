@@ -33,6 +33,10 @@ en:
   controller:
     registrations:
       welcome: Welcome to Incubit ...
+    sessions:
+      signed_in: Sign in successfully
+      signed_out: Sign out succesfully
+      incorrect_credentials: Incorrect email or password
 
   views:
     title: Incubit

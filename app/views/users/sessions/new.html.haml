@@ -1,0 +1,19 @@
+%main.my-form
+  .cotainer
+    .row.justify-content-center
+      .col-md-8
+        .card
+          .card-header= t('views.navbar.sign_in')
+          .card-body
+            = form_for :user, url: sign_in_path do |f|
+              .form-group.row
+                = f.label t('views.labels.email'), class: 'col-md-4 col-form-label'
+                .col-md-8
+                  = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control', placeholder: t('views.placeholder.email')
+              .form-group.row
+                = f.label t('views.labels.password'), class: 'col-md-4 col-form-label'
+                .col-md-8
+                  = f.password_field :password, autocomplete: 'current-password', class: 'form-control', placeholder: t('views.placeholder.password')
+              .form-group.row.offset-md-4
+                .col-md-4
+                  = f.submit t('views.navbar.sign_in'), class: 'btn btn-primary'

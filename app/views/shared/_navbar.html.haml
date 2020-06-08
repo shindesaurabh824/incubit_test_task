@@ -1,15 +1,15 @@
 %nav.navbar.navbar-expand-lg.navbar-light.navbar-laravel
   .container
-    = link_to t('views.navbar.site_name'), '#', class: 'navbar-brand'
+    = link_to t('views.navbar.site_name'), root_path, class: 'navbar-brand'
     %button.navbar-toggler
       %span.navbar-toggler-icon
     #navbarSupportedContent.collapse.navbar-collapse
       %ul.navbar-nav.ml-auto
         - if user_logged_in?
           %li.nav-item
-            = link_to t('views.navbar.sign_out'), '#', class: 'nav-link', method: :delete
+            = link_to t('views.navbar.sign_out'), sign_out_path, class: 'nav-link', method: :delete
         - else
           %li.nav-item
-            = link_to t('views.navbar.sign_in'), '#', class: 'nav-link'
+            = link_to t('views.navbar.sign_in'), sign_in_path, class: 'nav-link'
           %li.nav-item
             = link_to t('views.navbar.sign_up'), sign_up_path, class: 'nav-link'
