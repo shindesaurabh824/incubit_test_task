@@ -71,3 +71,5 @@ en:
       not_saved:
         one: "1 error prohibited this %{user} from being saved:"
         other: "%{count} errors prohibited this %{user} from being saved:"
+    record_not_found: Record not found
+    internal_server: Internal Server Error

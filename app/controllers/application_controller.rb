@@ -4,6 +4,14 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :user_logged_in?
   before_action :authenticate_user!
 
+  rescue_from StandardError do |error|
+    render_error(t('errors.internal_server'))
+  end
+
+  rescue_from ActiveRecord::RecordNotFound do |error|
+    render_error(t('errors.record_not_found'))
+  end
+
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
@@ -20,5 +28,10 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     redirect_to sign_in_path unless user_logged_in?
+  end
+
+  def render_error(message)
+    flash[:error] = message
+    redirect_to request.referrer
   end
 end
