@@ -1,24 +1,19 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Incubit Test Task
+## Dependencies
+* Ruby version : 2.6.3
+* Rails Version : 6.0.3
+* Redis Version : 3.0.6
+## Configuration
+```gem install bundler && bundle install```
+## Setup and Start the Applicaton
+### Database Setup
+```rake db:create && rake db:migrate```
+### Run the rails server
+```rails s```
+### Start sidekiq
+```sidekiq```
+## Test Environment Setup
+### Test Database Setup
+```RAILS_ENV=test rake db:create && RAILS_ENV=test rake db:migrate```
+### Run the Test Suit
+```rspec```
