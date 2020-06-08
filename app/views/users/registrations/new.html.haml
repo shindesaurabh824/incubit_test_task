@@ -21,3 +21,5 @@
                   = f.password_field :password_confirmation, autocomplete: 'new-password', class: 'form-control', placeholder: t('views.placeholder.password')
               .col-md-8.offset-md-4
                 = f.submit t('views.navbar.sign_up'), class: 'btn btn-primary'
+
+= javascript_pack_tag 'users/registration'
