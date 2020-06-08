@@ -37,12 +37,44 @@ en:
       signed_in: Sign in successfully
       signed_out: Sign out succesfully
       incorrect_credentials: Incorrect email or password
+    passwords:
+      instruction: Check email for further instructions
+      updated: Password updated succesfully
+      not_updated: Password does not updated
+      invalid_url: Invalid forgot password url
+      token_expired: Reset password token has been expired
+      instruction_sending_failed: Unable to send instructions, Please try again later ...
     users:
       profile_updated: Profile updated successfully
       profile_not_updated: Profile does not updated
 
+  mailer:
+    user:
+      welcome_email:
+        subject: Welcome to Incubit
+        title: Sign up succesfully
+        body: "Welcome, %{email}. You have registered successfully. Thanks for joining with us."
+      reset_password:
+        subject: Reset Password
+        link: Change my password
+        body: Someone has requested a link to change your password. You can do this through the link below.
+
   views:
     title: Incubit
+    navbar:
+      site_name: Incubit Test Task
+      sign_in: Sign in
+      sign_out: Sign out
+      sign_up: Sign up
+      edit_profile: Edit profile
+    users:
+      passwords:
+        create: Create new password
+        update: Update Password
+        forgot: Forgot your password?
+        send_instruction: Send me reset password instructions
+      my_profile: My Profile
+      update_profile: Update Profile
     labels:
       email: Email
       username: Username
@@ -52,22 +84,6 @@ en:
       username: John
       email: john@example.com
       password: '********'
-    navbar:
-      site_name: Incubit Test Task
-      sign_in: Sign in
-      sign_out: Sign out
-      sign_up: Sign up
-      edit_profile: Edit profile
-    users:
-      my_profile: My Profile
-      update_profile: Update Profile
-
-  mailer:
-    user:
-      welcome_email:
-        subject: Welcome to Incubit
-        title: Sign up succesfully
-        body: "Welcome, %{email}. You have registered successfully. Thanks for joining with us."
 
   errors:
     messages:

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     get :sign_in, to: 'sessions#new'
     post :sign_in, to: 'sessions#create'
     delete :sign_out, to: 'sessions#destroy'
+
+    resource :password
   end
 
   resource :profile, only: %i[show edit update]

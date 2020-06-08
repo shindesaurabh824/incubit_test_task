@@ -1,0 +1,22 @@
+= render 'shared/error_messages', user: @user
+%main.my-form
+  .cotainer
+    .row.justify-content-center
+      .col-md-8
+        .card
+          .card-header= t('views.users.passwords.create')
+          .card-body
+            = form_with model: @user, url: password_path, method: :put, local: true, class: 'edit-password' do |f|
+              = hidden_field_tag :token, @user.reset_password_token
+              .form-group.row
+                = f.label t('views.labels.password'), class: 'col-md-4 col-form-label'
+                .col-md-8
+                  = f.password_field :password, class: 'form-control', placeholder: t('views.placeholder.password')
+              .form-group.row
+                = f.label t('views.labels.confirm_password'), class: 'col-md-4 col-form-label'
+                .col-md-8
+                  = f.password_field :password_confirmation, class: 'form-control', placeholder: t('views.placeholder.password')
+              .col-md-8.offset-md-4
+                = f.submit t('views.users.passwords.update'), class: 'btn btn-primary'
+
+= javascript_pack_tag 'users/password'

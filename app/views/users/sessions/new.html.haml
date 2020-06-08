@@ -17,3 +17,5 @@
               .form-group.row.offset-md-4
                 .col-md-4
                   = f.submit t('views.navbar.sign_in'), class: 'btn btn-primary'
+                .col-md-8.text-md-right
+                  = link_to t('views.users.passwords.forgot'), new_password_path

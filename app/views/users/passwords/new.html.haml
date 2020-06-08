@@ -1,0 +1,14 @@
+%main.my-form
+  .cotainer
+    .row.justify-content-center
+      .col-md-8
+        .card
+          .card-header= t('views.users.passwords.forgot')
+          .card-body
+            = form_for :user, url: password_path, local: true do |f|
+              .form-group.row
+                = f.label t('views.labels.email'), class: 'col-md-4 col-form-label'
+                .col-md-8
+                  = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control', placeholder: t('views.placeholder.email')
+              .col-md-8.offset-md-4
+                = f.submit t('views.users.passwords.send_instruction'), class: 'btn btn-primary'
