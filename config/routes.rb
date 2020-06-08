@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     delete :sign_out, to: 'sessions#destroy'
   end
 
-  resource :profile, only: %i[show]
+  resource :profile, only: %i[show edit update]
 
   get '*path', to: redirect('/')
 end

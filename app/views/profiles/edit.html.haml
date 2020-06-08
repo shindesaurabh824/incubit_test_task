@@ -1,0 +1,29 @@
+= render 'shared/error_messages', user: current_user
+%main.my-form
+  .cotainer
+    .row.justify-content-center
+      .col-md-8
+        .card
+          .card-header= t('views.users.my_profile')
+          .card-body
+            = form_with model: current_user, url: profile_path, local: true, class: 'edit-profile' do |f|
+              .form-group.row
+                = f.label t('views.labels.email'), class: 'col-md-4 col-form-label'
+                .col-md-8
+                  = f.email_field :email, disabled: true, class: 'form-control', placeholder: t('views.placeholder.email')
+              .form-group.row
+                = f.label t('views.labels.username'), class: 'col-md-4 col-form-label'
+                .col-md-8
+                  = f.text_field :username, required: true, minlength: Constant::USERNAME_MIN_LENGTH, class: 'form-control', placeholder: t('views.placeholder.username')
+              .form-group.row
+                = f.label t('views.labels.password'), class: 'col-md-4 col-form-label'
+                .col-md-8
+                  = f.password_field :password, minlength: Constant::PASSWORD_MIN_LENGTH, class: 'form-control', placeholder: t('views.placeholder.password')
+              .form-group.row
+                = f.label t('views.labels.confirm_password'), minlength: Constant::PASSWORD_MIN_LENGTH, class: 'col-md-4 col-form-label'
+                .col-md-8
+                  = f.password_field :password_confirmation, class: 'form-control', placeholder: t('views.placeholder.password')
+              .col-md-8.offset-md-4
+                = f.submit t('views.users.update_profile'), class: 'btn btn-primary'
+
+= javascript_pack_tag 'profile'
