@@ -42,8 +42,13 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
   # Use for testing
+  gem 'faker'
   gem 'rspec-rails', '~> 4.0.0'
   gem 'shoulda-matchers'
+  gem 'fabrication'
+  gem 'rails-controller-testing'
+  gem 'shoulda-callback-matchers', '~> 1.1.1'
+  gem 'rspec-sidekiq'
 end
 
 group :development do
