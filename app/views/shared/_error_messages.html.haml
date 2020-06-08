@@ -1,0 +1,9 @@
+- if user.errors.any?
+  .alert.alert-dismissable.alert-danger
+    %h3
+      = t('errors.messages.not_saved',                  |
+        count: user.errors.count,                       |
+        user: user.class.model_name.human.downcase) |
+    %ul
+      - user.errors.full_messages.each do |message|
+        %li= message

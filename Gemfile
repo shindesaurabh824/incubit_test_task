@@ -31,6 +31,10 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Use figaro as the configuration management
 gem 'figaro'
 
+# Use haml as view engine
+gem 'haml'
+gem 'haml-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -1,0 +1,15 @@
+%main.my-form
+  .cotainer
+    .row.justify-content-center
+      .col-md-8
+        .card
+          .card-header= t('views.users.my_profile')
+          .card-body
+            .form-group.row
+              %label.col-md-4.col-form-label= t('views.labels.email')
+              .col-md-8
+                %label.col-md-4.col-form-label= current_user.email
+            .form-group.row
+              %label.col-md-4.col-form-label= t('views.labels.username')
+              .col-md-8
+                %label.col-md-4.col-form-label= current_user.username

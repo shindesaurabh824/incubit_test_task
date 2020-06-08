@@ -1,0 +1,4 @@
+- flash.each do |klass, msg|
+  - types = { error: 'danger', notice: 'info', success: 'success', warning: 'warning' }
+  .alert.alert-dismissable{ class: "alert-#{types[klass.try(:to_sym)]}" }
+    = msg
