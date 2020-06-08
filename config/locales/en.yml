@@ -45,6 +45,12 @@ en:
       username: John
       email: john@example.com
       password: '********'
+    navbar:
+      site_name: Incubit Test Task
+      sign_in: Sign in
+      sign_out: Sign out
+      sign_up: Sign up
+      edit_profile: Edit profile
 
   errors:
     messages:
