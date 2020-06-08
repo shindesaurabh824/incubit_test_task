@@ -52,6 +52,13 @@ en:
       sign_up: Sign up
       edit_profile: Edit profile
 
+  mailer:
+    user:
+      welcome_email:
+        subject: Welcome to Incubit
+        title: Sign up succesfully
+        body: "Welcome, %{email}. You have registered successfully. Thanks for joining with us."
+
   errors:
     messages:
       not_saved:

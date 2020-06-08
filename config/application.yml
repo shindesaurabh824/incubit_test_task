@@ -5,12 +5,17 @@ development:
   DB_HOST: 'localhost'
   DB_PORT: '5432'
 
+  SUPPORT_EMAIL: 'support@example.com'
+  HOST: 'localhost:3000'
+  REDIS_URL: 'redis://localhost:6379'
+
 production:
   DB_NAME: ''
   DB_USERNAME: ''
   DB_PASSWORD: ''
   DB_HOST: ''
   DB_PORT: ''
+  REDIS_URL: ''
 
 test:
   DB_NAME: 'incubit_test_task_test'
@@ -18,3 +23,4 @@ test:
   DB_PASSWORD: 'postgres'
   DB_HOST: 'localhost'
   DB_PORT: '5432'
+  REDIS_URL: ''
