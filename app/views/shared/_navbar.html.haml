@@ -7,6 +7,8 @@
       %ul.navbar-nav.ml-auto
         - if user_logged_in?
           %li.nav-item
+            = link_to t('views.navbar.edit_profile'), edit_profile_path, class: 'nav-link'
+          %li.nav-item
             = link_to t('views.navbar.sign_out'), sign_out_path, class: 'nav-link', method: :delete
         - else
           %li.nav-item
