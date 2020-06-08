@@ -19,11 +19,15 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: <%= Figaro.env.RAILS_MAX_THREADS { 5 } %>
 
 development:
   <<: *default
-  database: incubit_test_task_development
+  username: <%= Figaro.env.DB_USERNAME %>
+  password: <%= Figaro.env.DB_PASSWORD %>
+  host: <%= Figaro.env.DB_HOST %>
+  port: <%= Figaro.env.DB_PORT %>
+  database: <%= Figaro.env.DB_NAME %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +61,11 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: incubit_test_task_test
+  username: <%= Figaro.env.DB_USERNAME %>
+  password: <%= Figaro.env.DB_PASSWORD %>
+  host: <%= Figaro.env.DB_HOST %>
+  port: <%= Figaro.env.DB_PORT %>
+  database: <%= Figaro.env.DB_NAME %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +88,8 @@ test:
 #
 production:
   <<: *default
-  database: incubit_test_task_production
-  username: incubit_test_task
-  password: <%= ENV['INCUBIT_TEST_TASK_DATABASE_PASSWORD'] %>
+  username: <%= Figaro.env.DB_USERNAME %>
+  password: <%= Figaro.env.DB_PASSWORD %>
+  host: <%= Figaro.env.DB_HOST %>
+  port: <%= Figaro.env.DB_PORT %>
+  database: <%= Figaro.env.DB_NAME %>

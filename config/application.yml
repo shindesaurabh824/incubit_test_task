@@ -1,0 +1,20 @@
+development:
+  DB_NAME: 'incubit_test_task_development'
+  DB_USERNAME: 'postgres'
+  DB_PASSWORD: 'postgres'
+  DB_HOST: 'localhost'
+  DB_PORT: '5432'
+
+production:
+  DB_NAME: ''
+  DB_USERNAME: ''
+  DB_PASSWORD: ''
+  DB_HOST: ''
+  DB_PORT: ''
+
+test:
+  DB_NAME: 'incubit_test_task_test'
+  DB_USERNAME: 'postgres'
+  DB_PASSWORD: 'postgres'
+  DB_HOST: 'localhost'
+  DB_PORT: '5432'
